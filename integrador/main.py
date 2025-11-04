@@ -3,9 +3,9 @@ print("TRABAJO PRÁCTICO INTEGRADOR - PROGRAMACIÓN I")
 # Importación de módulos necesarios
 import os
 
-# Se obtiene la ruta del archivo biblioteca.csv
+# Se obtiene la ruta del archivo paises.csv
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# Se construye la ruta al archivo 'biblioteca.csv' dentro de esa carpeta
+# Se construye la ruta al archivo 'paises.csv' dentro de esa carpeta
 ruta_archivo = os.path.join(BASE_DIR, "paises.csv")
 
 
@@ -44,7 +44,7 @@ def lectura_archivo():
             # Se obtienen  la población y superficie y se convierten en enteros
             poblacion = int(partes[1].strip())
             superficie = int(partes[2].strip())
-            # Se obtiene el país sin espacios ni saltos de línea
+            # Se obtiene el continente sin espacios ni saltos de línea
             continente = partes[3].strip()
 
             # Se crea un diccionario con los elementos de cada país
@@ -62,8 +62,35 @@ def lectura_archivo():
     
 # Se llama a la función para que se ejecute
 paises = lectura_archivo()
-print(paises)
 
+# Función para buscar país
+def buscar_pais(paises, nombre):
+    pais = pais.lower().strip()
+    # Se recorre el catálogo buscando existencias
+    for pais in paises:
+        if pais["nombre"].lower().strip() == nombre:
+            # Devuelve el diccionario del país si se encuentra, o None si no existe
+            return nombre
+    return None
+
+# Función para comprobar país válido, que no exista en la lista
+def comprobar_pais(paises):
+    while True:
+                # Se solicita al usuario que ingrese el título
+                nombre_pais = input("Por favor, ingrese el nombre del país que desea agregar: ").title().strip()
+                # Se comprueba que no esté vacío
+                if nombre_pais == "":
+                    # Se informa error
+                    print("No es posible ingresar un nombre vacío. Por favor, vuelva a intentarlo.\n")
+                    continue
+                
+                if buscar_pais(paises, nombre_pais) is not None:
+                
+                    continue
+            
+                # Se devuelve el nombre del país
+                return nombre_pais
+    
 
 # Función para el menú principal
 def menu_principal(paises):
@@ -91,6 +118,13 @@ def menu_principal(paises):
             # Agregar país
             case "1":
                 print("1. Agregar un país\n")
+
+                # Se solicita al usuario el nombre del país
+                pais = input("Ingrese el nombre del país que desea agregar: ")
+
+                
+
+                
 
             # Actualizar población
             case "2":
@@ -143,6 +177,8 @@ def menu_principal(paises):
                     match ordenar:
                         case "1":
                             print("Por nombre.")
+
+                            
                         case "2":
                             print("Por población.")
                         case "3":
