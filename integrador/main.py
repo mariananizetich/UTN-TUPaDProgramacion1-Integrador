@@ -65,32 +65,42 @@ paises = lectura_archivo()
 
 # Función para buscar país
 def buscar_pais(paises, nombre):
-    pais = pais.lower().strip()
-    # Se recorre la lista buscando existencias
+    # Se normaliza el nombre ingresado quitando espacios y pasándolo a minúsculas
+    nombre = nombre.lower().strip()
+    # Se recorre la lista buscando coincidencias
     for pais in paises:
         if pais["nombre"].lower().strip() == nombre:
-            # Devuelve el diccionario del país si se encuentra, o None si no existe
-            return nombre
+            # Devuelve el diccionario del país si se encuentra
+            return pais
+    # Devuelve None si no existe
     return None
 
-# Función para comprobar país válido, que no exista en la lista
+# Función para comprobar duplicidad
 def comprobar_pais(paises):
+    # Se inicia un bucle que se repetirá cuando la opción ingresada no sea válida
     while True:
                 # Se solicita al usuario que ingrese el país
-                nombre_pais = input("Por favor, ingrese el nombre del país que desea agregar: ").title().strip()
-                # Se comprueba que no esté vacío
-                if nombre_pais == "":
+                entrada = input("Por favor, ingrese el nombre del país que desea agregar: ")
+                # Se eliminan espacios
+                nombre_pais = entrada.strip()
+                # Se comprueba que no sea un texto vacío o un formato inválido
+                if nombre_pais == "" or nombre_pais.isdigit():
                     # Se informa error
-                    print("No es posible ingresar un nombre vacío. Por favor, vuelva a intentarlo.\n")
+                    print("El país ingresado no es válido. Por favor, vuelva a intentarlo.\n")
                     continue
                 
+                # Se normaliza el nombre del país ingresado
+                nombre_pais = nombre_pais.title()
+
+                # Se comprueba duplicidad
                 if buscar_pais(paises, nombre_pais) is not None:
-                
+                    # Se informa error si el país ya existe
+                    print("El país que desea agregar ya existe.\n")
                     continue
             
                 # Se devuelve el nombre del país
                 return nombre_pais
-    
+
 
 # Función para el menú principal
 def menu_principal(paises):
@@ -108,7 +118,7 @@ def menu_principal(paises):
         print("5. Filtrar países por rango de población/rango de superficie.")
         print("6. Ordenar países por nombre/población/superficie.")
         print("7. Mostrar estadísticas.")
-        print("8.Salir.\n")
+        print("8. Salir.\n")
 
         # Se solicita la opción al usuario
         opcion = input("Ingrese la opción que desea realizar: ")
@@ -147,7 +157,7 @@ def menu_principal(paises):
                     print("3. Filtrar países por rango de superficie.")
                     print("4. Volver al menú principal.")
 
-                    filtrar = input("Indique de qué modo quiere filtrar países: ")
+                    filtrar = input("¿Qué opción desea realizar? ")
 
                     match filtrar:
                         case "1":
@@ -160,7 +170,8 @@ def menu_principal(paises):
                             # Se sale del bucle y regresa al menú principal
                             break
                         case _:
-                            print("La opción ingresada no es válida. Inténtelo de nuevo.\n")
+                            # Se informa error
+                            print("La opción ingresada no es válida. Por favor, vuelva a intentarlo.\n")
                             continue
 
             # Ordenar países
@@ -172,7 +183,7 @@ def menu_principal(paises):
                     print("3. Ordenar países por superficie.")
                     print("4. Volver al menú principal.")
 
-                    ordenar = input("Indique de qué modo quiere filtrar países: ")
+                    ordenar = input("¿Qué opción desea realizar? ")
 
                     match ordenar:
                         case "1":
@@ -181,13 +192,18 @@ def menu_principal(paises):
                             
                         case "2":
                             print("Por población.")
+
+
                         case "3":
                             print("Por superficie.")
+
+
                         case "4":
                             # Se sale del bucle y regresa al menú principal
                             break
                         case _:
-                            print("La opción ingresada no es válida. Inténtelo de nuevo.\n")
+                            # Se informa error
+                            print("La opción ingresada no es válida. Por favor, vuelva a intentarlo.\n")
                             continue
                 
             # Mostrar estadísticas
