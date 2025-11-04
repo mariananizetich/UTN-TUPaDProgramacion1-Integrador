@@ -13,7 +13,7 @@ ruta_archivo = os.path.join(BASE_DIR, "paises.csv")
 def lectura_archivo():
     # Se comprueba que la ruta del archivo exista
     if not os.path.exists(ruta_archivo):
-            print("No se encontró archivo existente. Se iniciará un catálogo vacío.\n")
+            print("No se encontró archivo existente.\n")
             return []
     
     # Se inicia una lista vacía que guardará el diccionario con los elementos del archivo
@@ -66,7 +66,7 @@ paises = lectura_archivo()
 # Función para buscar país
 def buscar_pais(paises, nombre):
     pais = pais.lower().strip()
-    # Se recorre el catálogo buscando existencias
+    # Se recorre la lista buscando existencias
     for pais in paises:
         if pais["nombre"].lower().strip() == nombre:
             # Devuelve el diccionario del país si se encuentra, o None si no existe
@@ -76,7 +76,7 @@ def buscar_pais(paises, nombre):
 # Función para comprobar país válido, que no exista en la lista
 def comprobar_pais(paises):
     while True:
-                # Se solicita al usuario que ingrese el título
+                # Se solicita al usuario que ingrese el país
                 nombre_pais = input("Por favor, ingrese el nombre del país que desea agregar: ").title().strip()
                 # Se comprueba que no esté vacío
                 if nombre_pais == "":
