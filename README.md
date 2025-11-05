@@ -30,7 +30,7 @@ El programa utiliza estructuras de datos en Python (listas y diccionarios) y ope
 
 ## Ejemplos de entradas y salidas
 
-# Ejemplo 1: Agregar un país
+- Ejemplo 1: Agregar un país
 
 Entrada del Usuario:
 Nombre del país: Argentina
