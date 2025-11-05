@@ -5,28 +5,28 @@ def buscar_pais():
     paises = obtener_base_paises()
     
     if not paises:
-        print ("El listado de paises esta vacio")
+        print ("El listado de países está vacío.")
         return
    
-    nombre = input("Ingrese el nombre del pais a buscar: ").strip()
+    nombre = input("Ingrese el nombre del país a buscar: ").strip()
     pais_encontrado= False
     
     while True:
     
         if esta_vacio(nombre):
-            print ("El nombre del pais ingresado NO existe o esta vacio.")
+            print ("El nombre del país ingresado NO existe o está vacío.")
             
-            resp = input("Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menu anterior) ")
+            resp = input("Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menú anterior) ")
 
             if resp.lower().strip() == "s":
-                nombre = input("Ingrese nuevamente el pais: ").strip()
+                nombre = input("Ingrese nuevamente el país: ").strip()
                 continue
             else: break
             
         else: 
             for pais in paises:
                 if pais["nombre"].lower() == nombre.lower():
-                    print(f" Pais: {pais["nombre"]}\n Poblacion: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
+                    print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                     pais_encontrado=True
                     return
 
@@ -34,16 +34,16 @@ def buscar_pais():
                 elif nombre.lower() in pais["nombre"].lower():
                     coincidencia = pais["nombre"].lower()
                     print(f"Intentaste filtrar: {coincidencia}. El detalle es el siguiente: ")
-                    print(f" Pais: {pais["nombre"]}\n Poblacion: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
+                    print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                     pais_encontrado=True
                     return
                 
             if not pais_encontrado:
-                print("No se encuentra el pais ingresado")
-                resp = input("Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menu anterior) ")
+                print("No se encuentra el país ingresado.")
+                resp = input("¿Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menú anterior) ")
 
                 if resp.lower().strip() == "s":
-                    nombre = input("Ingrese nuevamente el pais: ").strip()
+                    nombre = input("Ingrese nuevamente el país: ").strip()
                     continue
                 else: break
 

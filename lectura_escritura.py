@@ -20,7 +20,7 @@ def obtener_base_paises():
         with open(NOMBRE_ARCHIVO, "w", newline="", encoding="utf-8") as archivo:
             escritor = csv.DictWriter(archivo, fieldnames=["nombre", "poblacion", "superficie", "continente"])
             escritor.writeheader()
-            print("-Base de paises iniciada-")
+            print("-Base de países iniciada-")
             return base 
     
     # Lectura del archivo existente
