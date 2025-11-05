@@ -10,7 +10,7 @@ A través de un menú interactivo, el usuario puede:
 - Filtrar países por continente, rango de población, o rango de superficie.
 - Ordenar la lista por diferentes criterios (nombre, población, superficie).
 - Consultar estadísticas generales (promedios, país con mayor o menor población, cantidad de países por continente).
-El programa utiliza estructuras de datos en Python (listas y diccionarios) y operaciones básicas de lectura y escritura de archivos CSV, aplicando lógica estructurada y modular.
+El programa utiliza operaciones básicas de lectura y escritura de archivos CSV, aplicando lógica estructurada y modular.
 
 ---
 
