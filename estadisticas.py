@@ -50,18 +50,18 @@ def mostrar_estadisticas():
 
     # Se recorre la lista de países para obtener cada continente
     for pais in paises:
-        continente = pais["continente"].lower().strip()
+        continente = pais["continente"].strip()
 
         # Se suman las cantidades de países en cada continente
-        if continente == "americano":
+        if continente == "Americano":
             americano += 1
-        elif continente == "africano":
+        elif continente == "Africano":
             africano += 1
-        elif continente == "asiatico":
+        elif continente == "Asiatico":
             asiatico += 1
-        elif continente == "europeo":
+        elif continente == "Europeo":
             europeo += 1
-        elif continente == "oceania":
+        elif continente == "Oceania":
             oceania +=1
 
     # Se muestran resultados por pantalla

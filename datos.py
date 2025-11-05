@@ -32,14 +32,28 @@ def agregar_pais():
         
     superficie = int(superficie)
     
-    continente = input("Ingrese continente: ").strip()
-
-    while True:
-        if esta_vacio(continente):
-            print("El continente no puede estar vacío.")
-            continente = input("Ingrese continente: ").strip()
-        else: break
+    continentes= ['Americano', 'Africano', 'Asiatico', 'Europeo', 'Oceania']
+    continente_seleccionado=False
     
+    while True:
+        print("Seleccione Continente: Americano, Africano, Asiatico, Europeo, Oceania")
+        continente = input(f"Ingrese continente seleccionado:  ").strip()
+        
+        while True:
+            if esta_vacio(continente):
+                print("El continente no puede estar vacío.")
+                continente = input("Ingrese continente: ").strip()
+            else:break
+            
+        for cont in continentes:
+            if continente.lower() == cont.lower():
+                continente=cont
+                continente_seleccionado= True
+                break
+                
+        if not continente_seleccionado:
+            print("El continente ingresado no esta dentro del indicado. Debes ingresar uno valido")
+        else: break
     
     agregar_a_base_paises({"nombre": nombre_pais , "poblacion": poblacion, "superficie": superficie, "continente": continente})
     
