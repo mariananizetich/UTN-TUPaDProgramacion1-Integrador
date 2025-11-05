@@ -23,8 +23,8 @@ def ordenar_paises():
     # Menú de opciones
     while True:
         print("·····ORDENAR PAÍSES·····")
-        print("A. Por nombre (A-Z).")
-        print("B. Por población.")
+        print("A. Por nombre (A-Z/ Z-A).")
+        print("B. Por población (ascendente/descendente).")
         print("C. Por superficie (ascendente/descendente).")
         print("Presiona cualquier tecla para volver al menú anterior.")
         print("·" * 20)
@@ -37,27 +37,87 @@ def ordenar_paises():
             case "A":
                 print("\n__PAÍSES POR ORDEN ALFABÉTICO__\n")
 
-                # Se ordenan los países por orden alfabético
-                paises_ordenados = sorted(paises, key=por_nombre)
-                # Se muestran por pantalla
-                for pais in paises_ordenados:
-                     print(f"País: {pais['nombre']}\n Población: {pais['poblacion']}\n Superficie: {pais['superficie']} km2\n Continente: {pais['continente']}")
-                     print(".....")
+                while True:
+                    
+                    # Se soliicta al usuario el orden
+                    orden = input("Indique el orden que desee: ascendente A-Z (A) - descendente Z-A (D): ").strip().upper()
+
+                    # Se comprueba que la entrada no esté vacía
+                    if esta_vacio(orden):   
+                        print("La opción ingresada no es válida.")
+                        resp = input("¿Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menú anterior)").strip().lower()
+                        if resp == "s":
+                            continue
+                        else: 
+                            break
+
+                    # Orden ascendente
+                    if orden == "A":
+                        paises_ordenados = sorted(paises, key=por_nombre)
+                    
+                    # Orden descendente
+                    elif orden == "D":
+                        paises_ordenados = sorted(paises, key=por_nombre, reverse=True)
+                    
+                    # Opción inválida
+                    else:
+                        resp = input("¿Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menú anterior): ").strip().lower()
+                        if resp == "s":
+                            continue
+                        else: 
+                            break
+                    
+                    # Se muestra por pantalla
+                    for pais in paises_ordenados:
+                        print(f"País: {pais['nombre']}\n Población: {pais['poblacion']}\n Superficie: {pais['superficie']} km2\n Continente: {pais['continente']}")
+                        print("_"*10)
+                    break
+
+
             case "B":
-                print("\n__PAÍSES POR POBLACIÓN (MAYOR A MENOR)__\n")
+                print("\n__PAÍSES POR POBLACIÓN__\n")
                 
-                # Se ordenan los países por población, orden descendente
-                paises_ordenados = sorted(paises, key=por_poblacion, reverse=True)
-                # Se muestran por pantalla
-                for pais in paises_ordenados:
-                     print(f"País: {pais['nombre']}\n Población: {pais['poblacion']}\n Superficie: {pais['superficie']} km2\n Continente: {pais['continente']}")
-                     print(".....")
+                while True:
+                    
+                    # Se soliicta al usuario el orden
+                    orden = input("Indique el orden que desee: Ascendente (A) - Descendente (D): ").strip().upper()
+
+                    # Se comprueba que la entrada no esté vacía
+                    if esta_vacio(orden):   
+                        print("La opción ingresada no es válida.")
+                        resp = input("¿Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menú anterior)").strip().lower()
+                        if resp == "s":
+                            continue
+                        else: 
+                            break
+
+                    # Orden ascendente
+                    if orden == "A":
+                        paises_ordenados = sorted(paises, key=por_poblacion)
+                    
+                    # Orden descendente
+                    elif orden == "D":
+                        paises_ordenados = sorted(paises, key=por_poblacion, reverse=True)
+                    
+                    # Opción inválida
+                    else:
+                        resp = input("¿Deseas ingresarlo nuevamente? (s: vuelve a ingresar / n: Regresa al menú anterior): ").strip().lower()
+                        if resp == "s":
+                            continue
+                        else: 
+                            break
+                    
+                    # Se muestra por pantalla
+                    for pais in paises_ordenados:
+                        print(f"País: {pais['nombre']}\n Población: {pais['poblacion']}\n Superficie: {pais['superficie']} km2\n Continente: {pais['continente']}")
+                        print("_"*10)
+                    break
 
             case "C":
                 print("\n__PAÍSES POR SUPERFICIE__\n")
 
                 while True:
-                    # Se soliicta al usuario el orden
+                    # Se solicita al usuario el orden
                     orden = input("Indique el orden que desee: Ascendente (A) - Descendente (D): ").strip().upper()
 
                     # Se comprueba que la entrada no esté vacía
@@ -87,7 +147,8 @@ def ordenar_paises():
                     
                     # Se muestra por pantalla
                     for pais in paises_ordenados:
-                        print(f"País: {pais['nombre']}\n Población: {pais['poblacion']}\n Superficie: {pais['superficie']} km2\n")
+                        print(f"País: {pais['nombre']}\n Población: {pais['poblacion']}\n Superficie: {pais['superficie']} km2\n Continente: {pais['continente']}")
+                        print("_"*10)
                     break
             # Se regresa al menú anterior
             case _:

@@ -11,6 +11,7 @@ def por_poblacion(pais):
 def mostrar_estadisticas():
     # Se obtiene el listado de países
     paises = obtener_base_paises()
+    
     # Se comprueba que no esté vacío
     if not paises:
         print ("El listado de países está vacío.")
@@ -64,15 +65,15 @@ def mostrar_estadisticas():
             oceania +=1
 
     # Se muestran resultados por pantalla
-    print("\n·····ESTADÍSTICAS·····\n")
+    print("\n····· ESTADÍSTICAS ·····\n")
 
     print(f"País con mayor población: {mayor_poblacion['nombre']} con {mayor_poblacion['poblacion']} habitantes.")
     print(f"País con menor población: {menor_poblacion['nombre']} con {menor_poblacion['poblacion']} habitantes.")
-    print(".....")
+    print("·" * 20)
 
     print(f"Promedio de población: {promedio_poblacion}")
     print(f"Promedio de superficie: {promedio_superficie}")
-    print(".....")
+    print("·" * 20)
 
     print("Países por continente:")
 
