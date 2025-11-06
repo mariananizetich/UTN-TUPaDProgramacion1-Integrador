@@ -59,7 +59,7 @@ Salida esperada: PAÍS AGREGADO CORRECTAMENTE
 
 
 ## Participación de las integrantes
-Stefania Peralta 
+Stefania Peralta\n
 Mariana Nizetich
 
 ## Lenguaje: 
