@@ -22,18 +22,18 @@ El programa utiliza operaciones básicas de lectura y escritura de archivos CSV,
     2. Actualizar población y superficie
     3. Buscar un país (coincidencia exacta o parcial)
     4. Filtrar países
-        o Por Continente
-        o Por Rango de población
-        o Por Rango de superficie
+        - Por Continente
+        - Por Rango de población
+        - Por Rango de superficie
     5. Ordenar países
-        o Nombre (A-Z o Z-A)
-        o Población (ascendente o descendente)
-        o Superficie (ascendente o descendente)
+        - Nombre (A-Z o Z-A)
+        - Población (ascendente o descendente)
+        - Superficie (ascendente o descendente)
     6. Mostrar estadísticas
-        o País con mayor y menor población
-        o Promedio de población
-        o Promedio de superficie
-        o Cantidad de países por continente
+        - País con mayor y menor población
+        - Promedio de población
+        - Promedio de superficie
+        - Cantidad de países por continente
    7. Salir del programa
         
 3. Los datos modificados se guardan automáticamente en el archivo CSV, asegurando la persistencia de la información.
@@ -57,11 +57,13 @@ Salida esperada: PAÍS AGREGADO CORRECTAMENTE
 
 <img width="525" height="340" alt="image" src="https://github.com/user-attachments/assets/053e9323-4410-4268-a851-84e39666bea5" />
 
+---
 
 ## Participación de las integrantes
-Stefania Peralta\n
-Mariana Nizetich
-
+- Stefania Peralta
+- Mariana Nizetich
+  
+---
 ## Lenguaje: 
 Python 3.14
 
