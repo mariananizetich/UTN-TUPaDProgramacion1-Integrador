@@ -15,16 +15,31 @@ El programa utiliza operaciones básicas de lectura y escritura de archivos CSV,
 ---
 
 ## Instrucciones de uso
-1. Ejecutar el archivo principal del programa (main.py).
+1. Ejecutar el archivo principal del programa (bloque_menu.py).
+   
 2. Desde el menú principal, el usuario puede elegir entre las siguientes opciones:
     1. Agregar país
     2. Actualizar población y superficie
-    3. Buscar un país
+    3. Buscar un país (coincidencia exacta o parcial)
     4. Filtrar países
+        o Por Continente
+        o Por Rango de población
+        o Por Rango de superficie
     5. Ordenar países
+        o Nombre (A-Z o Z-A)
+        o Población (ascendente o descendente)
+        o Superficie (ascendente o descendente)
     6. Mostrar estadísticas
-    7. Salir del programa
+        o País con mayor y menor población
+        o Promedio de población
+        o Promedio de superficie
+        o Cantidad de países por continente
+   7. Salir del programa
+        
 3. Los datos modificados se guardan automáticamente en el archivo CSV, asegurando la persistencia de la información.
+
+<img width="387" height="223" alt="image" src="https://github.com/user-attachments/assets/091a1443-f6c2-4924-b27e-06c131c9bbcb" />
+
 
 ---
 
@@ -40,7 +55,12 @@ Continente: americano
 
 Salida esperada: PAÍS AGREGADO CORRECTAMENTE
 
+<img width="525" height="340" alt="image" src="https://github.com/user-attachments/assets/053e9323-4410-4268-a851-84e39666bea5" />
+
+
 ## Participación de las integrantes
+Stefania Peralta 
+Mariana Nizetich
 
 ## Lenguaje: 
 Python 3.14
