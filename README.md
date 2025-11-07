@@ -1,5 +1,14 @@
 # UTN-TUPaDProgramacion1-TPIntegrador
 
+## Gestión de Datos de Países en Python
+
+TECNICATURA UNIVERSITARIA EN PROGRAMACIÓN - UTN
+
+Materia: Programación I
+Alumnas: Stefanía Peralta y Mariana Soledad Nizetich
+Docente Titular: Sebastián Bruselario
+Docente Tutor: Florencia Gubiotti
+
 ## Descripción del Programa:
 Este programa permite gestionar información sobre distintos países a partir de un archivo CSV con datos básicos como el nombre, la población, la superficie, y el continente.
 El sistema está desarrollado con Python y utiliza listas y diccionarios como estructuras principales de datos.
