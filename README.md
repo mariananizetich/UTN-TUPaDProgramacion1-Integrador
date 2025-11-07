@@ -5,8 +5,11 @@
 TECNICATURA UNIVERSITARIA EN PROGRAMACIÓN - UTN
 
 Materia: Programación I
+
 Alumnas: Stefanía Peralta y Mariana Soledad Nizetich
+
 Docente Titular: Sebastián Bruselario
+
 Docente Tutor: Florencia Gubiotti
 
 ## Descripción del Programa:
