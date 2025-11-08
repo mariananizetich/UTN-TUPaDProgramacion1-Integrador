@@ -20,7 +20,7 @@ def filtrar_paises():
         opcion= input ("Seleccione opción: (A-B-C):  ").strip().upper()
             
         match opcion:
-            case "A":
+            case "A": #  ---------------   filtra por continente ------------------
                 continente = input("Ingresa continente a filtrar: ").strip().lower()
 
                 while True:
@@ -40,7 +40,7 @@ def filtrar_paises():
                         print(".....")
                         
             
-            case "B": 
+            case "B": #  ---------------   filtra por rango de poblacion ------------------
                 print ("___RANGO DE POBLACIÓN___")
                 print("A. 0 a 20 millones de personas") 
                 print("B. Entre 20 millones y 40 millones de personas") 
@@ -72,7 +72,7 @@ def filtrar_paises():
                 if not rango_encontrado:
                     print("No hay países con población dentro del rango seleccionado.")
                     
-            case "C": 
+            case "C": #  ---------------   filtra por rango de superficie ------------------
                 print ("___RANGO DE SUPERFICIE___")
                 print("A. 0 a 500.000 km2") 
                 print("B. Entre 500.000 a 4.000.000 km2") 

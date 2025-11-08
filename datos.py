@@ -4,7 +4,7 @@ from lectura_escritura import obtener_base_paises, agregar_a_base_paises, guarda
 # ---------------------------------------- Funcion agregar pais -------------------------   
 def agregar_pais():
     print("·········· AGREGAR NUEVO PAÍS ··········")
-    nombre_pais = input("Ingrese nombre de país: ").strip()
+    nombre_pais = input("Ingrese nombre de país: ").capitalize().strip()
 
     while True:
         if esta_vacio(nombre_pais) or existe_nombre(nombre_pais):
