@@ -1,6 +1,4 @@
-# Trabajo Práctico Integrador
-
-## Gestión de Datos de Países en Python
+## Trabajo Práctico Integrador: Gestión de Datos de Países en Python
 
 TECNICATURA UNIVERSITARIA EN PROGRAMACIÓN - UTN
 
