@@ -17,7 +17,7 @@ def filtrar_paises():
         print("Presiona cualquier tecla para volver al menú anterior")
         print("·" * 20)
 
-        opcion= input ("Seleccione opción: (A-B-C):  ").strip().upper()
+        opcion = input("Seleccione opción: (A-B-C):  ").strip().upper()
             
         match opcion:
             case "A": #  ---------------   filtra por continente ------------------
@@ -48,26 +48,26 @@ def filtrar_paises():
                 print("Ingresa otra opción para volver al menú anterior\n") 
                 
                 rango = input("Selecciona rango de población a filtrar: ").upper()
-                rango_encontrado= False
+                rango_encontrado = False
                 
                 for pais in paises:
                     if rango == "A":
                         if pais["poblacion"] <= 20000000:
                             print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                             print("________________\n")
-                            rango_encontrado= True
+                            rango_encontrado = True
                            
                     elif rango == "B":
                         if pais["poblacion"] > 20000000 and pais["poblacion"] < 40000000 :
                             print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                             print("________________\n")
-                            rango_encontrado= True
+                            rango_encontrado = True
                            
                     elif rango == "C":
                         if pais["poblacion"] >= 40000000 :
                             print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                             print("________________\n")
-                            rango_encontrado= True
+                            rango_encontrado = True
                             
                 if not rango_encontrado:
                     print("No hay países con población dentro del rango seleccionado.")
@@ -87,19 +87,19 @@ def filtrar_paises():
                         if pais["superficie"] <= 500000:
                             print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                             print("________________\n")
-                            rango_encontrado= True
+                            rango_encontrado = True
                             
                     elif rango == "B":
                         if pais["superficie"] > 500000 and pais["superficie"] < 4000000 :
                             print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                             print("________________\n")
-                            rango_encontrado= True
+                            rango_encontrado = True
                             
                     elif rango == "C":
                         if pais["superficie"] >= 4000000 :
                             print(f" País: {pais["nombre"]}\n Población: {pais["poblacion"]}\n Superficie: {pais["superficie"]}\n Continente: {pais["continente"]}")
                             print("________________\n")
-                            rango_encontrado= True
+                            rango_encontrado = True
                             
                 if not rango_encontrado:
                     print("No hay países con superficie dentro del rango seleccionado.")
